@@ -1,0 +1,19 @@
+/* configurações gerais e resets */
+
+html {
+    text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+    text-decoration: none;
+}
+
+head {
+    display: none;
+}
