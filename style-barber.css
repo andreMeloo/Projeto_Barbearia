@@ -5,6 +5,8 @@ html {
 }
 
 body {
+	color: #fff;
+	background: #080808;
     margin: 0;
 	padding: 0;
 	border: 0;
@@ -16,4 +18,78 @@ body {
 
 head {
     display: none;
+}
+
+main {
+	min-height: 800px;
+	flex-wrap: wrap;
+}
+
+/* Section Config */
+
+#theSection {
+	display: flex;
+	flex-flow: wrap column;
+	align-items: center;
+	min-height: 100%;
+	overflow: hidden;
+}
+
+/* article */
+
+#theArticle {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex-grow: 1;
+	padding-bottom: 25px;
+	height: 800px;
+	box-sizing: border-box;
+	
+}
+
+/* div foto */
+
+.divPhoto {
+	width: 650px;
+	height: 425px;
+	box-sizing: border-box;
+}
+
+.imgBarber {
+	position: relative;
+	top: -60px;
+	width: 650px;
+	height: 590px;
+	z-index: 0;
+}
+
+/* div formulário */
+
+.divForm {
+	position: relative;
+	color: rgb(121, 144, 152);
+	background-color: #040404;
+	border: 2px solid #101010;
+	border-radius: 8px;
+	width: 100%;
+	max-width: 325px;
+	flex-grow: 1;
+	margin-bottom: 20px;
+	align-items: center;
+}
+
+#loginForm {
+	display: flex;
+	flex-direction: column;
+}
+
+.boxForm {
+	margin-top: 15px;
+	-webkit-box-flex: 0;
+	flex: 0 0 auto;
+	justify-content: flex-start;
+	-webkit-box-pack: start;
+	align-content: stretch;
+	align-items: stretch;
 }
