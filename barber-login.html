@@ -6,6 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style-barber.css">
         <link rel="icon" href="imagens/Icone-Titulo/favicon.ico" type="image/x-icon" />
+        <style>
+            @font-face {
+                font-family: "MillionDreams";
+                src: url("fontes/MillionDreams.otf");
+            }
+        </style>
         <title>Barber Shop</title>
     </head>
     <body>
@@ -16,37 +22,35 @@
                             <img src="imagens/Icone-Titulo/android-chrome-512x512.png" alt="Logo Barber Shop" class="imgBarber">
                     </div>
                     <div class="divForm">
-                            <form id="loginForm" method="post">
-                                <div class="boxForm">
-                                    <div class="boxRegister">
-                                            <p class="PGraphRegister"> Novo usuário?
-                                                <a class="register">Cadastre-se</a>
-                                            </p>
-                                    </div>
-                                    <div class="boxLabel">
-                                        <div class="label_adjust">
-                                            <label class="labelUser">
-                                                <span class="spanUser">E-mail</span>
-                                                <input type="email" name="email" class="User" autocomplete="on" maxlength="75">
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="boxLabel">
-                                        <div class="label_adjust">
-                                            <label class="labelUser">
-                                                <span class="spanUser">Senha</span>
-                                                <input type="password" name="pass" class="User" maxlength="14">
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="boxButton">
-                                        <button type="submit" class="buttonEntrar">
-                                            <span class="spanEntrar">Entrar</span>
-                                        </button>
+                        <form id="loginForm" method="post">
+                                <div class="boxRegister">
+                                        <p class="PGraphRegister"> Novo usuário ?
+                                            <a class="register">Cadastre-se</a>
+                                        </p>
+                                </div>
+                                <div class="boxLabel">
+                                    <div class="label_adjust">
+                                        <label class="labelUser">
+                                            <span class="spanUser">E-mail</span>
+                                            <input type="email" name="email" class="User" autocomplete="on" maxlength="75" required>
+                                        </label>
                                     </div>
                                 </div>
-                                <a class="notPass">Esqueceu a senha?</a>
-                            </form>
+                                <div class="boxLabel">
+                                    <div class="label_adjust">
+                                        <label class="labelUser">
+                                            <span class="spanUser">Senha</span>
+                                            <input type="password" name="pass" class="User" maxlength="14" required>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="boxButton">
+                                    <button type="submit" class="buttonEntrar">
+                                        <span class="spanEntrar">Entrar</span>
+                                    </button>
+                                </div>
+                            <a class="notPass">Esqueceu a senha?</a>
+                        </form>
                     </div>
                 </article>
             </main>

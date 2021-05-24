@@ -10,10 +10,12 @@ body {
     margin: 0;
 	padding: 0;
 	border: 0;
+	box-sizing: border-box;
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
     text-decoration: none;
+	font-family: "MillionDreams";
 }
 
 head {
@@ -23,6 +25,15 @@ head {
 main {
 	min-height: 800px;
 	flex-wrap: wrap;
+}
+
+input, button {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	border: none;
+	background-color: ;
+	outline: none;
 }
 
 /* Section Config */
@@ -68,28 +79,57 @@ main {
 
 .divForm {
 	position: relative;
-	color: rgb(121, 144, 152);
+	color: rgb(221, 155, 6);
 	background-color: #040404;
-	border: 2px solid #101010;
+	border: 2px solid rgba(134, 114, 68, 0.5);
 	border-radius: 8px;
 	width: 100%;
 	max-width: 325px;
 	flex-grow: 1;
-	margin-bottom: 20px;
+	margin-bottom: 15px;
 	align-items: center;
 }
 
 #loginForm {
 	display: flex;
 	flex-direction: column;
-}
-
-.boxForm {
 	margin-top: 15px;
-	-webkit-box-flex: 0;
 	flex: 0 0 auto;
 	justify-content: flex-start;
 	-webkit-box-pack: start;
 	align-content: stretch;
 	align-items: stretch;
+}
+
+.boxForm {
+	
+}
+
+/* Box de para escolher se cadastrar */
+
+.boxRegister {
+	display: flex;
+	margin: 0 30px 5px 30px;
+	height: 55px;
+	max-height: 60px;
+	flex-flow: nowrap row;
+	justify-content: center;
+	align-items: center;
+}
+
+.PGraphRegister {
+	font-size: 18px;
+	margin: 0 0;
+}
+
+.register {
+	color: rgb(121, 144, 152);
+	cursor: pointer;
+	padding-left: 8px;
+}
+
+/* Box das Labels */
+
+.boxLabel {
+
 }
