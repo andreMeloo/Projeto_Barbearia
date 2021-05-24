@@ -6,6 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style-barber.css">
         <link rel="icon" href="imagens/Icone-Titulo/favicon.ico" type="image/x-icon" />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <style>
             @font-face {
                 font-family: "MillionDreams";
@@ -28,54 +31,48 @@
                                             <a class="register">Cadastre-se</a>
                                         </p>
                                 </div>
-                                <div class="boxLabel">
-                                    <div class="label_adjust">
-                                        <label class="labelUser">
-                                            <span class="spanUser">E-mail</span>
-                                            <input type="email" name="email" class="User" autocomplete="on" maxlength="75" required>
-                                        </label>
-                                    </div>
+                                <div class="boxInput">
+                                    <input type="email" name="email" class="User" autocomplete="off" maxlength="75" required>
+                                    <label class="labelUser">E-mail</label>
+                                    <span class="spanError"></span>
                                 </div>
-                                <div class="boxLabel">
-                                    <div class="label_adjust">
-                                        <label class="labelUser">
-                                            <span class="spanUser">Senha</span>
-                                            <input type="password" name="pass" class="User" maxlength="14" required>
-                                        </label>
-                                    </div>
+                                <div class="boxInput">
+                                    <input type="password" name="pass" class="User" maxlength="14" required>
+                                    <label class="labelUser">Senha</label>
+                                    <span class="spanError"></span>
                                 </div>
                                 <div class="boxButton">
                                     <button type="submit" class="buttonEntrar">
                                         <span class="spanEntrar">Entrar</span>
                                     </button>
                                 </div>
-                            <a class="notPass">Esqueceu a senha?</a>
+                                <a class="notPass">Esqueceu a senha?</a>
                         </form>
                     </div>
                 </article>
             </main>
             <footer id="footerMain">
-                <div class="boxFooter">
-                    <div class="divFooters">
-                        <a href="http://instagram.com" target="_blank" rel="noopener noreferrer">
-                            <span class="myContacts">Instagram</span>
-                        </a>
-                    </div>
-                    <div class="divFooters">
-                        <a href="http://facebook.com" target="_blank" rel="noopener noreferrer">
-                            <span class="myContacts">Facebook</span>
-                        </a>
-                    </div>
-                    <div class="divFooters">
-                        <a target="_blank" rel="noopener noreferrer">
-                            <span class="myContacts">Contatos</span>
-                        </a>
-                    </div>
-                    <div class="divFooters">
-                        <a href="" target="_blank" rel="noopener noreferrer">
-                            <span class="myContacts">Sobre</span>
-                        </a>
-                    </div>
+                <div class="divFooters">
+                    <a href="http://instagram.com" target="_blank" rel="noopener noreferrer">
+                        <img src="imagens/instagram-icon.png" alt="insta-icon" class="imgIcons">
+                        <span class="myContacts">Instagram</span>
+                    </a>
+                </div>
+                <div class="divFooters">
+                    <a href="http://facebook.com" target="_blank" rel="noopener noreferrer">
+                        <img src="imagens/facebook-icone.png" alt="face-icon" class="imgIcons">
+                        <span class="myContacts">Facebook</span>
+                    </a>
+                </div>
+                <div class="divFooters">
+                    <a target="_blank" rel="noopener noreferrer">
+                        <span class="myContacts">Contatos</span>
+                    </a>
+                </div>
+                <div class="divFooters">
+                    <a href="" target="_blank" rel="noopener noreferrer">
+                        <span class="myContacts">Sobre</span>
+                    </a>
                 </div>
             </footer>
         </section>
