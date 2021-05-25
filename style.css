@@ -81,7 +81,7 @@ input, button {
 
 .divForm {
 	position: relative;
-	color: rgb(221, 155, 6);
+	color: #d5d5d5;
 	background-color: #040404;
 	border: 2px solid rgba(134, 114, 68, 0.5);
 	border-radius: 8px;
@@ -122,7 +122,7 @@ input, button {
 }
 
 .register {
-	color: #d5d5d5;
+	color: rgb(221, 155, 6);
 	background-color: #040404;
 	cursor: pointer;
 	padding-left: 8px;
@@ -132,7 +132,7 @@ input, button {
 
 .boxInput {
 	display: flex;
-	flex-direction: column;
+	flex-flow: nowrap row;
 	align-items: center;
 	flex-flow: wrap;
 	position: relative;
@@ -146,7 +146,7 @@ input, button {
 	position: absolute;
 	top: 16px;
 	left: 0;
-	padding-left: 8px;
+	padding-left: 45px;
 	font-size: 16px;
 	color: rgb(221, 155, 6);
 	transition: .3s;
@@ -158,9 +158,8 @@ input, button {
 	max-width: 275px;
 	height: 50px;
 	max-height: 50px;
-	padding-left: 8px;
+	padding-left: 45px;
 	padding-top: 8px;
-	border-left: 1px solid rgba(134, 114, 68, 0.5);
 	border-bottom: 1px solid rgba(134, 114, 68, 0.5);
 	color: #d5d5d5;
 	font-size: 14px;
@@ -169,11 +168,65 @@ input, button {
 	z-index: 1;
 }
 
+#userPass {
+	padding: 8px 45px 0 45px;
+}
+
+.User:focus {
+	border-left: 1px solid rgba(134, 114, 68, 0.5);
+	transition: border 0.3s ease 0.1s;
+}
+
 .User:valid ~ label,
 .User:focus ~ label {
 	transform: translateY(-17px);
 	font-size: 12px;
 	letter-spacing: 0.1em;
+}
+
+.User ~ svg {
+	position: absolute;
+	left: 15px;
+	top: 50%;
+	transform: translateY(-50%);
+	fill: rgb(40,39,44);
+}
+
+.User:focus ~ svg {
+	fill: rgb(221, 155, 6);
+	transition: fill 0.2s ease 0s;
+}
+
+.viewPassNo {
+	display: block;
+	position: absolute;
+	background: none;
+	border: 0px;
+	right: 15px;
+	top: 50%;
+	transform: translateY(-50%);
+	transition: opacity 0.2s ease 0s;
+	cursor: pointer;
+	opacity: 0.7;
+	z-index: 2;
+}
+
+.viewPassYes {
+	display: block;
+	position: absolute;
+	background: none;
+	border: 0px;
+	right: 15px;
+	top: 50%;
+	transform: translateY(-50%);
+	transition: opacity 0.2s ease 0s;
+	cursor: pointer;
+	z-index: 2;
+}
+
+.viewPassYes svg, .viewPassNo svg {
+	fill: rgb(221, 155, 6);
+	font-size: 16px;
 }
 
 .boxInput .spanError{
@@ -228,7 +281,7 @@ input, button {
 	width: 100%;
 	height: 100%;
 	max-height: 20px;
-	color: #d5d5d5;
+	color: rgb(221, 155, 6);
 	background-color: #040404;
 	letter-spacing: 0.1em;
 	font-size: 15px;
@@ -251,6 +304,7 @@ input, button {
 }
 
 #footerMain a {
+	color: rgb(221, 155, 6);
 	cursor: pointer;
 }
 
