@@ -22,3 +22,119 @@ eye.onclick = (e) => {
 }
 
 
+// function to focus input email
+
+
+let inputEmail = document.querySelector("#userEmail")
+
+inputEmail.addEventListener("blur", () => {
+    if (inputEmail.value != "") {
+        inputEmail.parentNode.querySelector("label").setAttribute("style", "transform: translateY(-12px); font-size: 1.2rem; letter-spacing: 0.1em;")
+    } else {
+        inputEmail.parentNode.querySelector("label").removeAttribute("style")
+    }
+})
+
+
+
+
+
+// Function to validate form and message error
+
+const fields = document.querySelectorAll("[required]")
+
+
+function validateField(field) {
+
+        // loica para verificar se existem erros
+        function verifyErrors() {
+            let foundError = false;
+    
+            for (let error in field.validity) {
+                // se não for customError
+                // então verifica se tem error
+                if (field.validity[error] && !field.validity.valid){
+                    foundError = error;
+                }
+            }
+    
+            return foundError;
+        }
+
+        function customMessage(typeError) {
+            const messages = {
+                password: {
+                    valueMissing: "Por farvor, preencha este campo"
+                },
+                email: {
+                    valueMissing: "Email é obrigatório",
+                    typeMismatch: "Por farvor, preencha um email válido"
+                }
+            }
+
+            return messages[field.type][typeError]
+        }
+
+        function setCustomMessage(message) {
+            const spanError = field.parentNode.querySelector(".spanError")
+
+            if (message) {
+                spanError.classList.add("active")
+                spanError.innerHTML = message
+            } else {
+                spanError.classList.remove("active")
+                spanError.innerHTML = ""
+            }
+
+        } 
+
+        return function () {
+
+            const error = verifyErrors();
+
+            if (error) {
+                const message = customMessage(error)
+
+                field.parentNode.style.borderBottom = "1px solid rgba(134, 114, 68, 0.5)"
+                field.parentNode.querySelector("svg").style.fill = "rgb(40,39,44)"
+                setCustomMessage(message)
+            } else {
+                field.parentNode.style.borderBottom = "1px solid green"
+                field.parentNode.querySelector("svg").style.fill = "green"
+                setCustomMessage("")
+            }
+        }
+}
+
+
+
+function customValidation(event) {
+
+
+    const field = event.target;
+    const validation = validateField(field);
+
+    validation();
+    
+}
+
+
+for (field of fields) {
+    field.addEventListener("invalid", event => {
+        // eliminar o bubble
+        event.preventDefault();
+
+        customValidation(event)
+    })
+    field.addEventListener("blur", customValidation)
+}
+
+
+document.querySelector("form")
+    .addEventListener("submit", event => {
+        console.log("enviar formulário")
+
+        // não envia o formulário
+        event.preventDefault()
+})
+

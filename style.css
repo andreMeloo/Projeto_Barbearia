@@ -1,7 +1,10 @@
 /* configurações gerais e resets */
 
 html {
-    text-size-adjust: 100%;
+    font-size: 62.5%;
+}
+body {
+	height: 100vh;
 }
 
 body, a {
@@ -11,7 +14,6 @@ body, a {
 	padding: 0;
 	border: 0;
 	box-sizing: border-box;
-	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
     text-decoration: none;
@@ -23,8 +25,9 @@ head {
 }
 
 main {
-	min-height: 800px;
-	flex-wrap: wrap;
+	height: 100%;
+	width: 100%;
+	max-width: 650px;
 }
 
 input, button {
@@ -42,9 +45,10 @@ input, button {
 
 #theSection {
 	display: flex;
-	flex-flow: wrap column;
+	flex-flow: nowrap column;
 	align-items: center;
-	min-height: 100%;
+	height: 100%;
+	max-height: 100vh;
 	overflow: hidden;
 }
 
@@ -56,7 +60,9 @@ input, button {
 	align-items: center;
 	flex-grow: 1;
 	padding-bottom: 25px;
-	height: 800px;
+	height: 100%;
+	width: 100%;
+	max-width: 650px;
 	box-sizing: border-box;
 	
 }
@@ -64,16 +70,22 @@ input, button {
 /* div foto */
 
 .divPhoto {
-	width: 650px;
-	height: 425px;
-	box-sizing: border-box;
+	display: flex;
+	width: 100%;
+	max-width: 650px;
+	height: 100%;
+	max-height: 425px;
+	justify-content: center;
+	align-items: center;
 }
 
 .imgBarber {
-	position: relative;
+	position: absolute;
+	width: auto;
+	max-width: 650px;
 	top: -60px;
-	width: 650px;
-	height: 590px;
+	height: 100%;
+	max-height: 590px;
 	z-index: 0;
 }
 
@@ -87,6 +99,8 @@ input, button {
 	border-radius: 8px;
 	width: 100%;
 	max-width: 330px;
+	height: 100%;
+	max-height: 330px;
 	flex-grow: 1;
 	margin-bottom: 15px;
 	align-items: center;
@@ -96,6 +110,10 @@ input, button {
 	display: flex;
 	flex-direction: column;
 	box-sizing: border-box;
+	height: 100%;
+	max-height: 300px;
+	width: 100%;
+	max-width: 330px;
 	margin-top: 15px;
 	flex: 0 0 auto;
 	justify-content: flex-start;
@@ -109,15 +127,15 @@ input, button {
 .boxRegister {
 	display: flex;
 	margin: 0 30px 15px 30px;
-	height: 35px;
-	max-height: 60px;
+	height: 100%;
+	max-height: 35px;
 	flex-flow: nowrap row;
 	justify-content: center;
 	align-items: center;
 }
 
 .PGraphRegister {
-	font-size: 16px;
+	font-size: 1.6rem;
 	margin: 0 0;
 }
 
@@ -132,37 +150,38 @@ input, button {
 
 .boxInput {
 	display: flex;
-	flex-flow: nowrap row;
+	flex-flow: wrap row;
 	align-items: center;
-	flex-flow: wrap;
 	position: relative;
-	margin: 0 25px 40px 25px;
-	height: 45px;
-	max-height: 60px;
+	margin: 0 25px 35px 25px;
+	width: 100%;
+	max-width: 280px;
+	border-bottom: 1px solid rgba(134, 114, 68, 0.5);
+	height: 100%;
+	max-height: 45px;
 	background-color: #060606;
 }
 
 .labelUser {
 	position: absolute;
-	top: 16px;
+	top: 12px;
 	left: 0;
 	padding-left: 45px;
-	font-size: 16px;
+	font-size: 1.6rem;
 	color: rgb(221, 155, 6);
 	transition: .3s;
 	z-index: 0;
 }
 
 .User {
-	width: 275px;
+	width: 100%;
 	max-width: 275px;
-	height: 50px;
+	height: 100%;
 	max-height: 50px;
 	padding-left: 45px;
 	padding-top: 8px;
-	border-bottom: 1px solid rgba(134, 114, 68, 0.5);
 	color: #d5d5d5;
-	font-size: 14px;
+	font-size: 1.4rem;
 	font-family: 'Roboto', sans-serif;
 	align-self: center;
 	z-index: 1;
@@ -179,8 +198,8 @@ input, button {
 
 .User:valid ~ label,
 .User:focus ~ label {
-	transform: translateY(-17px);
-	font-size: 12px;
+	transform: translateY(-12px);
+	font-size: 1.2rem;
 	letter-spacing: 0.1em;
 }
 
@@ -207,7 +226,7 @@ input, button {
 	transform: translateY(-50%);
 	transition: opacity 0.2s ease 0s;
 	cursor: pointer;
-	opacity: 0.7;
+	opacity: 0.4;
 	z-index: 2;
 }
 
@@ -219,6 +238,7 @@ input, button {
 	right: 15px;
 	top: 50%;
 	transform: translateY(-50%);
+	font-size: 100%;
 	transition: opacity 0.2s ease 0s;
 	cursor: pointer;
 	z-index: 2;
@@ -226,20 +246,21 @@ input, button {
 
 .viewPassYes svg, .viewPassNo svg {
 	fill: rgb(221, 155, 6);
-	font-size: 16px;
+	font-size: 1.6rem;
 }
 
-.boxInput .spanError{
+.spanError{
 	width: 100%;
+	max-width: 280px;
 	padding: 0;
 	background-color: rgba(209, 30, 17, 0.6);
 }
 
-.boxInput .spanError.active {
+.spanError.active {
 	border: 1px solid red;
 	color: #d5d5d5;
 	font-family: 'Roboto', sans-serif;
-	font-size: 14px;
+	font-size: 1.4rem;
 	text-align: center;
 	padding-left: 8px;
 }
@@ -251,15 +272,17 @@ input, button {
 	justify-content: center;
 	width: 100%;
 	max-width: 325px;
-	height: 45px;
+	height: 100%;
+	max-height: 45px;
+	margin-top: 10px;
 	margin-bottom: 15px;
 }
 
 .buttonEntrar {
 	display: flex;
 	height: 75%;
-	width: 212px;
 	border-radius: 2px;
+	width: 100%;
 	max-width: 212px;
 	padding-top: 4px;
 	cursor: pointer;
@@ -270,7 +293,7 @@ input, button {
 
 .spanEntrar {
 	color: #040404;
-	font-size: 16px;
+	font-size: 1.6rem;
 	font-weight: bolder;
 	font-family: "MillionDreams";
 }
@@ -279,12 +302,13 @@ input, button {
 
 .notPass {
 	width: 100%;
+	max-width: 330px;
 	height: 100%;
 	max-height: 20px;
 	color: rgb(221, 155, 6);
 	background-color: #040404;
 	letter-spacing: 0.1em;
-	font-size: 15px;
+	font-size: 1.5rem;
 	cursor: pointer;
 	text-align: center;
 }
@@ -294,13 +318,14 @@ input, button {
 
 #footerMain {
 	display: flex;
-	flex-flow: wrap row;
+	flex-flow: nowrap row;
 	justify-content: space-between;
 	align-items: baseline;
-	font-size: 14px;
-	letter-spacing: 1px;
+	font-size: 1.4rem;
+	letter-spacing: 0.1rem;
 	width: 100%;
-	max-width: 360px;
+	max-width: 385px;
+	margin-bottom: 100px;
 }
 
 #footerMain a {
@@ -309,6 +334,7 @@ input, button {
 }
 
 .imgIcons {
+	width: 100%;
 	max-width: 15px;
 	border-radius: 3px;
 	margin-right: 3px;
@@ -317,5 +343,41 @@ input, button {
 .divFooters {
 	flex: 0 0 auto;
 }
+
+.linkContact {
+	display: flex;
+	flex-flow: nowrap row;
+	align-items: baseline;
+	width: 100%;
+	max-width: 80px;
+}
+
+.linkContact > svg {
+	width: 100%;
+	max-width: 16px;
+	border-radius: 3px;
+	margin-right: 4px;
+	fill: rgb(221, 155, 6);
+}
+
+.linkAbout {
+	display: flex;
+	flex-flow: nowrap row;
+	align-items: baseline;
+	width: 100%;
+	max-width: 65px;
+}
+
+.linkAbout > svg {
+	width: 100%;
+	max-width: 16px;
+	border-radius: 3px;
+	margin-right: 5px;
+	fill: rgb(221, 155, 6); 
+}
+
+/* Responsividade front-end */
+/* Media Queries */
+
 
 
