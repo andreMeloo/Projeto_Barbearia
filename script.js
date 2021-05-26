@@ -1,5 +1,3 @@
-// <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path></svg>
-
 // function to tranform pass type text to pass
 
 let eye = document.querySelector(".viewPassNo")
@@ -63,6 +61,9 @@ function validateField(field) {
 
         function customMessage(typeError) {
             const messages = {
+                text: {
+                    valueMissing: "Por farvor, preencha este campo"
+                },
                 password: {
                     valueMissing: "Por farvor, preencha este campo"
                 },
@@ -80,6 +81,7 @@ function validateField(field) {
 
             if (message) {
                 spanError.classList.add("active")
+                spanError.style.opacity = 1;
                 spanError.innerHTML = message
             } else {
                 spanError.classList.remove("active")
@@ -96,7 +98,9 @@ function validateField(field) {
                 const message = customMessage(error)
 
                 field.parentNode.style.borderBottom = "1px solid rgba(134, 114, 68, 0.5)"
-                field.parentNode.querySelector("svg").style.fill = "rgb(40,39,44)"
+                if(field.parentNode.querySelector("svg").style.fill == "green"){
+                    field.parentNode.querySelector("svg").removeAttribute("style")
+                }
                 setCustomMessage(message)
             } else {
                 field.parentNode.style.borderBottom = "1px solid green"
@@ -137,4 +141,33 @@ document.querySelector("form")
         // não envia o formulário
         event.preventDefault()
 })
+
+
+
+
+// function desapear span error
+
+let time = 200,
+    errorSpan = document.querySelectorAll(".boxInput span"),
+    opacityMinus = 0.025;
+
+
+
+
+
+function startNoOpacity() {
+    setInterval(() => {
+        for(Erro of errorSpan){
+            if (Erro.classList.value == "spanError active" && Erro.style.opacity > 0){
+                Erro.style.opacity -= opacityMinus;
+            }
+        }
+    }, time)
+}
+
+window.addEventListener("load", startNoOpacity)
+
+
+
+
 
